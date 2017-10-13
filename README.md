@@ -1,6 +1,6 @@
 # password-locker
 
-### An application that allows us to generate and store passwords for various accounts.
+### An application that allows a user to generate and store passwords for various accounts in one main application.
 
 ## Created by Mweru Muchai
 
