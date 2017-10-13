@@ -80,6 +80,7 @@ class TestUser(unittest.TestCase): # TestUser is a subclass
         
         self.assertTrue(user_exists)
         
+        
 # Credential Account
         
 class TestCredential(unittest.TestCase): # TestUser is a subclass
@@ -103,6 +104,15 @@ class TestCredential(unittest.TestCase): # TestUser is a subclass
         
         self.assertEqual(self.new_credential.account_name,"Instagram")
         self.assertEqual(self.new_credential.account_password,"muchai90")
+        
+     # Check if account information is saved
+    def test_save_credential_account(self):
+        
+         '''
+         Tests save credential account test case to see if the credential object is saved into the credentail_list
+         '''
+         self.new_credential.save_credential() #saving new credential account
+         self.assertEqual(len(Credential.credential_list), 1)
         
           
           
