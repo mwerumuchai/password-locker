@@ -125,6 +125,13 @@ class TestCredential(unittest.TestCase): # TestUser is a subclass
         test_credential = Credential("Facebook", "facebook90")
         test_credential.save_credential()
         self.assertEqual(len(Credential.credential_account_list), 2)
+    
+     # this method executes a set of instructions after every test    
+    def tearDown(self):
+        '''
+        This cleans up after each test case has run
+        '''
+        Credential.credential_account_list = []
         
           
           
