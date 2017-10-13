@@ -65,7 +65,7 @@ class TestUser(unittest.TestCase): # TestUser is a subclass
         self.assertEqual(len(User.user_list), 2)
         
         
-       # Use assertTrue method to check if the user account exists
+       # Use assertTrue method to check if the user account exists 
     def test_user_exists(self):
         '''
         Test to check if we can return a Boolean if account isn't found
@@ -75,7 +75,7 @@ class TestUser(unittest.TestCase): # TestUser is a subclass
         test_user =  User("Mary Mukami", "0714253689", "marymukami@gmail.com", "mary90")
         test_user.save_user()
         
-        user_exists = User.user_exists("0714253689")
+        user_exists = User.user_exists("mary90")
         
         self.assertTrue(user_exists)
         
