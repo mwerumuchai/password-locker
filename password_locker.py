@@ -1,11 +1,10 @@
-from user import User
 
-class user:
+class User:
     '''
     Class that generates new instances of users
     '''
     
-    def __init__(self,full_name,favorite_color,email,password,):
+    def __init__(self,user_full_name,user_favorite_color,user_email,user_password,):
         '''
         __init__method that helps us define propertis for our objects
         
@@ -15,7 +14,7 @@ class user:
             email: New user email.
             password: New user password.
         '''
-        self.full_name = full_name
-        self.favorite_color = favorite_color
-        self.email = email
-        self.password = password
+        self.user_full_name = user_full_name
+        self.user_favorite_color = user_favorite_color
+        self.user_email = user_email
+        self.user_password = user_password
