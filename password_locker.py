@@ -24,7 +24,7 @@ class User:
         '''
         
         self.user_full_name = user_full_name
-        self.user_user_phone_numberr = user_phone_number
+        self.user_phone_number = user_phone_number
         self.user_email = user_email
         self.user_password = user_password
         
@@ -34,5 +34,5 @@ class User:
         Save user method saves user objects
         '''
         
-        User.user_list.append()
+        User.user_list.append(self)
 

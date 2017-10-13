@@ -20,7 +20,19 @@ class TestUser(unittest.TestCase): # TestUser is a subclass
         Set up method runs before each test case
         '''
         
-        self.new_user = User("Esther Muchai", "mwerumuchai@gmail.com","0725336159", "mweru90")
+        self.new_user = User("Mweru Muchai", "0725336159","mwerumuchai@gmail.com", "mweru90")
+        
+    def test_init(self):
+        
+        '''
+        Test if the object is initialized properly
+        '''
+        self.assertEqual(self.new_user.user_full_name,"Mweru Muchai")
+        self.assertEqual(self.new_user.user_phone_number,"0725336159")
+        self.assertEqual(self.new_user.user_email,"mwerumuchai@gmail.com")
+        self.assertEqual(self.new_user.user_password,"mweru90")
+        
+                  
     
     # Check if user information is saved
     def test_save_user(self):
