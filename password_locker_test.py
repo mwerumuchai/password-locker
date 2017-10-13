@@ -112,7 +112,7 @@ class TestCredential(unittest.TestCase): # TestUser is a subclass
          Tests save credential account test case to see if the credential object is saved into the credentail_list
          '''
          self.new_credential.save_credential() #saving new credential account
-         self.assertEqual(len(Credential.credential_list), 1)
+         self.assertEqual(len(Credential.credential_account_list), 1)
         
           
           
