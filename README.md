@@ -1,1 +1,34 @@
 # password-locker
+
+### An application that allows us to generate and store passwords for various accounts.
+
+## Created by Mweru Muchai
+
+## Description
+This is a simple application that allows users to generate  and store passwords of different accounts in one main account. E.g. The user will be able to view all their accounts in one file. They can also create new accounts, key in their passwords or have their passwords auto generated. They'll have the capability to delete their accounts too.
+
+## Specifications
+| Behaviour | Input | Output |
+| --------------- | :----------:| --------: |
+|Display a page for creating a user account | **Select New user account** | User Name, Phone number, email, password |
+|Display a page for sign up if already created a user account| **Select sign up** | User name and password|
+|Display a page for creating a credential account | **Select New credential account** | Account Name, password |
+|Display a page for sign up if already created a credential account| **Select sign up** | Password|
+|Add New credential account| **Select New Credential** | Account Name. password|
+
+## Technologies Used
+Python3.6
+
+## Installation
+Install Python3.6
+Install Python3-pip
+Install Pyperclip
+Install Xclip
+
+### Running
+* `python3.6 password_locker_test.py`
+
+## License
+ MIT &copy;2017 **Mweru Muchai
+
+
