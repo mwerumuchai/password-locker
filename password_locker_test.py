@@ -133,6 +133,20 @@ class TestCredential(unittest.TestCase): # TestUser is a subclass
         '''
         Credential.credential_account_list = []
         
+    # Deletes the credential account
+    def test_delete_credential(self):
+        '''
+        test_delete_credential to test if we can remove a credential account
+        '''
+        
+        self.new_credential.save_credential()
+        test_credential = Credential("Facebook", "facebook90")
+        test_credential.save_credential()
+        
+        # deleting the credential account
+        self.new_credential.delete_credential_account()
+        self.assertEqual(len(Credential.credential_account_list), 2)
+        
           
           
 if __name__ == '__main__':
