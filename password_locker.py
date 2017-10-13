@@ -102,6 +102,13 @@ class Credential:
         '''
         
         Credential.credential_account_list.remove(self)
+        
+    @classmethod
+    def display_all_credential_accounts(cls):
+        '''
+        method that returns the credential account list
+        '''
+        return cls.credential_account_list
     
 
 
