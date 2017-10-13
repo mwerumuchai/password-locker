@@ -1,4 +1,4 @@
-# password-locker
+# Password Locker
 
 ### An application that allows a user to generate and store passwords for various accounts in one main application.
 
@@ -16,19 +16,23 @@ This is a simple application that allows users to generate  and store passwords 
 |Display a page for sign up if already created a credential account| **Select sign up** | Password|
 |Add New credential account| **Select New Credential** | Account Name. password|
 
+## User Stories
+* As a user I would like to be able to copy my credentials to the clipboard .
+* As a user I would also like to dictate how long of a password i would like to have
+
 ## Technologies Used
 Python3.6
 
 ## Installation
-Install Python3.6
-Install Python3-pip
-Install Pyperclip
-Install Xclip
+* Install Python3.6
+* Install Python3-pip
+* Install Pyperclip
+* Install Xclip
 
 ### Running
-* `python3.6 password_locker_test.py`
+* `python3.6 run.py`
 
 ## License
- MIT &copy;2017 **Mweru Muchai
+ MIT &copy;2017 **Mweru Muchai**
 
 
