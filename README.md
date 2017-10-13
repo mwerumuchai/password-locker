@@ -17,6 +17,9 @@ This is a simple application that allows users to generate  and store passwords 
 |Add New credential account| **Select New Credential** | Account Name. password|
 
 ## User Stories
+* To create an account with my details - log in and password
+* Store my existing login credentials
+* Generate a password for a new credential/account
 * As a user I would like to be able to copy my credentials to the clipboard .
 * As a user I would also like to dictate how long of a password i would like to have
 
