@@ -2,6 +2,8 @@
 user_full_name = ' '
 user_password = ' '
 
+
+#The below class user 
 class User:
     '''
     Class that generates new instances of users
@@ -35,4 +37,16 @@ class User:
         '''
         
         User.user_list.append(self)
+        
+        
+        
+# =============================================================================
+# # Create a class credential account
+# class Credential:
+#     '''
+#     class the generates new instances of credential users
+#     '''
+# =============================================================================
+    
+
 

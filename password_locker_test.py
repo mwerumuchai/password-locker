@@ -42,6 +42,28 @@ class TestUser(unittest.TestCase): # TestUser is a subclass
          '''
          self.new_user.save_user() #saving new user
          self.assertEqual(len(User.user_list), 1)
+         
+         
+# =============================================================================
+#     def tearDown(self):
+#         '''
+#         This cleans up after each test case has run
+#         '''
+#         User.user_list = []
+# =============================================================================
+    
+    # Check if user can save multiple user accounts
+    def test_save_multiple_user(self):
+        
+        '''
+        Test save multiple user test case to see whether we can save multiple user accounts to our user list
+        '''
+        
+        self.new_user.save_user() 
+        test_user = User("Mary Mukami", "0714253689", "marymukami@gmail.com", "mary90")
+        test_user.save_user()
+        self.assertEqual(len(User.user_list), 2)
+        
           
           
 if __name__ == '__main__':
