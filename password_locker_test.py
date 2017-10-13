@@ -9,6 +9,7 @@ Created on Fri Oct 13 11:59:06 2017
 import unittest
 from password_locker import User 
 from password_locker import Credential
+import pyperclip
 
 class TestUser(unittest.TestCase): # TestUser is a subclass
     
@@ -151,10 +152,23 @@ class TestCredential(unittest.TestCase): # TestUser is a subclass
     def test_display_all_credential_accounts(self):
         
         '''
-        Methos that returns a list of all credential accounts saved
+        test_display_all_credential_accounts to test that it returns a list of all credential accounts saved
         '''
         
         self.assertEqual(Credential.display_all_credential_accounts(), Credential.credential_account_list)
+        
+        
+    # Copy details in credentials account
+    def test_copy_account_name(self):
+        
+        '''
+        Test to confirm that the copied account name  if from the credential account
+        '''
+        
+        self.new_credential.save_credential()
+        Credential.copy_account_name("Instagram")
+        
+        self.assertEqual(self.new_credential.account_name,pyperclip.paste())
         
           
           

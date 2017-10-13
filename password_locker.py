@@ -1,3 +1,5 @@
+import pyperclip
+
 # Global variables
 user_name = ' '
 user_password = ' '
