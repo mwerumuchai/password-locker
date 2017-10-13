@@ -57,22 +57,11 @@ class User:
         # will lopp through each account that is saved and it will check if the password matches. 
         for user in cls.user_list:
             if user.user_password == user_password:
-                return Credential.credential_account_list
+                #return Credential.credential_account_list
                 return True
             
         return False
-    
-# =============================================================================
-#     @classmethod
-#     def log_in(user_name, user_password):
-#         '''
-#         Method that checks 
-#         '''
-#         
-#         for user in user_list:
-#             
-# =============================================================================
-        
+
         
 # Create a class credential account
 class Credential:
@@ -83,7 +72,7 @@ class Credential:
     credential_account_list = []
     global user_list
     
-    def __init__(self,user_name,user_password):
+    def __init__(self,account_name, account_password):
         
         '''
         __init__method that helps us define propertis for our objects
@@ -93,8 +82,19 @@ class Credential:
             password: New user password.
         '''
         
-        self.user_name = user_name
-        self.user_password = user_password
+        self.account_name = account_name
+        self.account_password = account_password
+        
+    
+# =============================================================================
+#     def save_credential(self):
+#         
+#         '''
+#         Save credential method saves user credential objects
+#         '''
+#         
+#         User.user_list.append(self)
+# =============================================================================
     
 
 

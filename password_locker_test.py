@@ -8,6 +8,7 @@ Created on Fri Oct 13 11:59:06 2017
 
 import unittest
 from password_locker import User 
+from password_locker import Credential
 
 class TestUser(unittest.TestCase): # TestUser is a subclass
     
@@ -78,6 +79,30 @@ class TestUser(unittest.TestCase): # TestUser is a subclass
         user_exists = User.user_exists("mary90")
         
         self.assertTrue(user_exists)
+        
+# Credential Account
+        
+class TestCredential(unittest.TestCase): # TestUser is a subclass
+    
+    '''
+    Test class that defines test cases for the credential class behaviours
+    '''
+    
+    def setUp(self):
+        '''
+        Set up method runs before each test case
+        '''
+        
+        self.new_credential = Credential("Instagram", "muchai90")
+        
+    def test_init(self):
+        
+        '''
+        Test if the object is initialized properly
+        '''
+        
+        self.assertEqual(self.new_credential.account_name,"Instagram")
+        self.assertEqual(self.new_credential.account_password,"muchai90")
         
           
           
