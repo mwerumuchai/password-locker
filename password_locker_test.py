@@ -147,6 +147,15 @@ class TestCredential(unittest.TestCase): # TestUser is a subclass
         self.new_credential.delete_credential_account()
         self.assertEqual(len(Credential.credential_account_list), 1)
         
+    #Display all credential account
+    def test_display_all_credential_accounts(self):
+        
+        '''
+        Methos that returns a list of all credential accounts saved
+        '''
+        
+        self.assertEqual(Credential.display_all_credential_accounts(), Credential.credential_account_list)
+        
           
           
 if __name__ == '__main__':
