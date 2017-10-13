@@ -20,14 +20,14 @@ class TestUser(unittest.TestCase): # TestUser is a subclass
         Set up method runs before each test case
         '''
         
-        self.new_user = User("Mweru Muchai", "0725336159","mwerumuchai@gmail.com", "mweru90")
+        self.new_user = User("mwerumuchai", "0725336159","mwerumuchai@gmail.com", "mweru90")
         
     def test_init(self):
         
         '''
         Test if the object is initialized properly
         '''
-        self.assertEqual(self.new_user.user_name,"Mweru Muchai")
+        self.assertEqual(self.new_user.user_name,"mwerumuchai")
         self.assertEqual(self.new_user.user_phone_number,"0725336159")
         self.assertEqual(self.new_user.user_email,"mwerumuchai@gmail.com")
         self.assertEqual(self.new_user.user_password,"mweru90")
@@ -60,7 +60,7 @@ class TestUser(unittest.TestCase): # TestUser is a subclass
         '''
         
         self.new_user.save_user() 
-        test_user = User("Mary Mukami", "0714253689", "marymukami@gmail.com", "mary90")
+        test_user = User("marymukami", "0714253689", "marymukami@gmail.com", "mary90")
         test_user.save_user()
         self.assertEqual(len(User.user_list), 2)
         
@@ -72,7 +72,7 @@ class TestUser(unittest.TestCase): # TestUser is a subclass
         '''
         
         self.new_user.save_user()
-        test_user =  User("Mary Mukami", "0714253689", "marymukami@gmail.com", "mary90")
+        test_user =  User("marymukami", "0714253689", "marymukami@gmail.com", "mary90")
         test_user.save_user()
         
         user_exists = User.user_exists("mary90")

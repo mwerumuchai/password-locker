@@ -20,10 +20,10 @@ class User:
         __init__method that helps us define propertis for our objects
         
         Args:
-            full_name: New User full name.
-            favorite_color: New user favorite color.
-            email: New user email.
-            password: New user password.
+            user_name: New User user name.
+            user_phone_number: New user phone number.
+            user_email: New user email.
+            user_password: New user password.
         '''
         
         self.user_name = user_name
@@ -52,14 +52,26 @@ class User:
     def user_exists(cls, user_password):
         
         '''
-        Method that is used to check if the account exists. Use phone number.
+        Method that is used to check if the account exists. User password.
         '''
-        # will lopp through each account that is saved and it will check if the number matches. 
+        # will lopp through each account that is saved and it will check if the password matches. 
         for user in cls.user_list:
             if user.user_password == user_password:
+                return Credential.credential_account_list
                 return True
             
         return False
+    
+# =============================================================================
+#     @classmethod
+#     def log_in(user_name, user_password):
+#         '''
+#         Method that checks 
+#         '''
+#         
+#         for user in user_list:
+#             
+# =============================================================================
         
         
 # Create a class credential account
@@ -70,6 +82,19 @@ class Credential:
     
     credential_account_list = []
     global user_list
+    
+    def __init__(self,user_name,user_password):
+        
+        '''
+        __init__method that helps us define propertis for our objects
+        
+        Args:
+            user_name: New user name
+            password: New user password.
+        '''
+        
+        self.user_name = user_name
+        self.user_password = user_password
     
 
 
