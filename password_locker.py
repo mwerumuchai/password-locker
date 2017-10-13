@@ -1,5 +1,5 @@
 # Global variables
-user_full_name = ' '
+user_name = ' '
 user_password = ' '
 
 
@@ -11,10 +11,10 @@ class User:
     user_list = []
     
     # Using global variables in functions
-    global user_full_name
+    global user_name
     global user_password
     
-    def __init__(self,user_full_name,user_phone_number,user_email,user_password):
+    def __init__(self,user_name,user_phone_number,user_email,user_password):
         
         '''
         __init__method that helps us define propertis for our objects
@@ -26,7 +26,7 @@ class User:
             password: New user password.
         '''
         
-        self.user_full_name = user_full_name
+        self.user_name = user_name
         self.user_phone_number = user_phone_number
         self.user_email = user_email
         self.user_password = user_password

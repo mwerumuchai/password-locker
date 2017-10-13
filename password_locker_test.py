@@ -27,7 +27,7 @@ class TestUser(unittest.TestCase): # TestUser is a subclass
         '''
         Test if the object is initialized properly
         '''
-        self.assertEqual(self.new_user.user_full_name,"Mweru Muchai")
+        self.assertEqual(self.new_user.user_name,"Mweru Muchai")
         self.assertEqual(self.new_user.user_phone_number,"0725336159")
         self.assertEqual(self.new_user.user_email,"mwerumuchai@gmail.com")
         self.assertEqual(self.new_user.user_password,"mweru90")
