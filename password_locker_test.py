@@ -44,11 +44,13 @@ class TestUser(unittest.TestCase): # TestUser is a subclass
          self.assertEqual(len(User.user_list), 1)
          
          
+     # this method executes a set of instructions after every test    
     def tearDown(self):
         '''
         This cleans up after each test case has run
         '''
         User.user_list = []
+        
     
     # Check if user can save multiple user accounts
     def test_save_multiple_user(self):
@@ -61,6 +63,21 @@ class TestUser(unittest.TestCase): # TestUser is a subclass
         test_user = User("Mary Mukami", "0714253689", "marymukami@gmail.com", "mary90")
         test_user.save_user()
         self.assertEqual(len(User.user_list), 2)
+        
+        
+       # Use assertTrue method to check if the user account exists
+    def test_user_exists(self):
+        '''
+        Test to check if we can return a Boolean if account isn't found
+        '''
+        
+        self.new_user.save_user()
+        test_user =  User("Mary Mukami", "0714253689", "marymukami@gmail.com", "mary90")
+        test_user.save_user()
+        
+        user_exists = User.user_exists("0714253689")
+        
+        self.assertTrue(user_exists)
         
           
           
