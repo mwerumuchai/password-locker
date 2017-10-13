@@ -148,7 +148,7 @@ class TestCredential(unittest.TestCase): # TestUser is a subclass
         self.new_credential.delete_credential_account()
         self.assertEqual(len(Credential.credential_account_list), 1)
         
-    #Display all credential account
+    #D isplay all credential account
     def test_display_all_credential_accounts(self):
         
         '''
@@ -156,6 +156,23 @@ class TestCredential(unittest.TestCase): # TestUser is a subclass
         '''
         
         self.assertEqual(Credential.display_all_credential_accounts(), Credential.credential_account_list)
+        
+        
+    # Use find_by_account_name
+    def test_find_by_account_name(self):
+        '''
+       Test to get the account name and returns the credential that matches that number
+        '''
+        
+        self.new_credential.save_credential()
+        
+        test_credential = Credential("Instagram", "muchai90")
+        
+        test_credential.save_credential()
+        
+        found_credential = Credential.find_by_account_name("Instagram")
+        
+        self.assertEqual(found_credential.account_name,test_credential.account_name)
         
         
     # Copy details in credentials account

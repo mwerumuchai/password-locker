@@ -105,12 +105,34 @@ class Credential:
         
         Credential.credential_account_list.remove(self)
         
+        
+    # Find by account name
+    def find_by_account_name(cls, account_name):
+      '''
+      Method that gets the account name and returns the credential that matches that number
+       
+      Args:
+          account_name: Account name to search for
+      Returns :
+          The actual account name for that credential
+      '''
+      
+      for credential in cls.credential_account_list:
+          if credential.account_name == account_name:
+              return credential
+        
     @classmethod
     def display_all_credential_accounts(cls):
         '''
         method that returns the credential account list
         '''
         return cls.credential_account_list
+    
+    @classmethod
+    def copy_account_name(cls, account_name):
+        account_name_found = Credential.find_by_account_name(account_name)
+        pyperclip.copy(account_name_found.account_name)
+        
     
 
 
