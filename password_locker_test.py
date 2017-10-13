@@ -44,13 +44,11 @@ class TestUser(unittest.TestCase): # TestUser is a subclass
          self.assertEqual(len(User.user_list), 1)
          
          
-# =============================================================================
-#     def tearDown(self):
-#         '''
-#         This cleans up after each test case has run
-#         '''
-#         User.user_list = []
-# =============================================================================
+    def tearDown(self):
+        '''
+        This cleans up after each test case has run
+        '''
+        User.user_list = []
     
     # Check if user can save multiple user accounts
     def test_save_multiple_user(self):
