@@ -85,7 +85,7 @@ class Credential:
         self.account_name = account_name
         self.account_password = account_password
         
-    
+    # Save credential
     def save_credential(self):
         
         '''
@@ -93,6 +93,15 @@ class Credential:
         '''
         
         Credential.credential_account_list.append(self)
+        
+    # Delete account
+    def delete_credential_account(self):
+        
+        '''
+        delete_credential_account delete a saved account from the credential account list
+        '''
+        
+        Credential.credential_account_list.remove(self)
     
 
 
