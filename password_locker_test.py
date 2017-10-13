@@ -113,6 +113,18 @@ class TestCredential(unittest.TestCase): # TestUser is a subclass
          '''
          self.new_credential.save_credential() #saving new credential account
          self.assertEqual(len(Credential.credential_account_list), 1)
+         
+    # Check if user can save multiple credential accounts
+    def test_save_multiple_credential_account(self):
+        
+        '''
+        Test save multiple user test case to see whether we can save multiple user accounts to our user list
+        '''
+        
+        self.new_credential.save_credential() 
+        test_credential = Credential("Facebook", "facebook90")
+        test_credential.save_credential()
+        self.assertEqual(len(Credential.credential_account_list), 2)
         
           
           
