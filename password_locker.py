@@ -28,4 +28,4 @@ class User:
         Save user method saves user objects
         '''
         
-        User.user
+        User.user_list.append(self)
