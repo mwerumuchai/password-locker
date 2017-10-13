@@ -1,9 +1,14 @@
+# Global variables
+user_full_name = ' '
+user_password = ' '
 
 class User:
     '''
     Class that generates new instances of users
     '''
-    User.user_list = []
+    user_list = []
+    global user_full_name
+    global user_password
     
     def __init__(self,user_full_name,user_favorite_color,user_email,user_password,):
         
@@ -28,4 +33,5 @@ class User:
         Save user method saves user objects
         '''
         
-        User.user_list.append(self)
+        User.user_list.append()
+
