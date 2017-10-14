@@ -107,7 +107,8 @@ class Credential:
         
         
     # Find by account name
-    def find_by_account_name(cls, account_name):
+    @classmethod
+    def find_by_account_name(cls,account_name):
       '''
       Method that gets the account name and returns the credential that matches that number
        

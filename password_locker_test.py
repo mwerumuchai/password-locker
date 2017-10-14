@@ -159,7 +159,7 @@ class TestCredential(unittest.TestCase): # TestUser is a subclass
         
         
     # Use find_by_account_name
-    def test_find_by_account_name(self):
+    def test_find_credential_by_account_name(self):
         '''
        Test to get the account name and returns the credential that matches that number
         '''
@@ -170,16 +170,16 @@ class TestCredential(unittest.TestCase): # TestUser is a subclass
         
         test_credential.save_credential()
         
-        found_credential = Credential.find_by_account_name("Instagram")
+        found_credential = Credential.find_by_account_name(test_credential.account_name)
         
-        self.assertEqual(found_credential.account_name,test_credential.account_name)
+        self.assertEqual(found_credential.account_password,test_credential.account_password)
         
         
     # Copy details in credentials account
     def test_copy_account_name(self):
         
         '''
-        Test to confirm that the copied account name  if from the credential account
+        Test to confirm that the copied account name  if from the credential list
         '''
         
         self.new_credential.save_credential()
