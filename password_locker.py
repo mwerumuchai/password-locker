@@ -50,6 +50,15 @@ class User:
         
         return User.user_exists(user_name)
     
+    #Display all users
+    @classmethod
+    def display_users(cls):
+        '''
+        Methos that returns the user list
+        '''
+        
+        return cls.user_list
+    
     @classmethod
     def user_exists(cls, user_name):
         

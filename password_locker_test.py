@@ -81,6 +81,15 @@ class TestUser(unittest.TestCase): # TestUser is a subclass
         
         self.assertTrue(user_exists)
         
+     # Display all users
+    def test_display_users(self):
+        
+        '''
+        test_display_users to test that it returns a list of all users saved
+        '''
+        
+        self.assertEqual(User.display_users(), User.user_list)
+        
         
 # Credential Account
         

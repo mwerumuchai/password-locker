@@ -34,6 +34,13 @@ def check_existing_user(user_name):
     '''
     return User.user_exists(user_name)
 
+# Checks for all users
+def display_users():
+    '''
+    Function that returns all the saved users
+    '''
+    return User.display_users()
+
 def main():
     print("Welcome to password Locker. Create an account.")
     
@@ -67,11 +74,37 @@ def main():
             print("Password: ....")
             user_password = input()
             
+            #Create and save new user
             save_user(create_user(user_name,user_phone_number,user_email,user_password))
             
             print('\n')
             print(f"{user_name} welcome! Continue to create you Credentials")
             
+        elif short_code == 'du' :
+            '''
+            Display current user
+            '''
+            
+            if display_users():
+                print("Current Users")
+                print("-"*10)
+                
+                for user in display_users():
+                    print(f"{user.user_name}")
+                    
+                    print('\n')
+                    print("-"*10)
+                else:
+                    print('\n')
+                    print("You don't have an account. Please register to use Password Locker.")
+                    
+                    print('\n')
+                
+                
+                    
+                
+                
+         # Exit Password Locker  
         elif short_code == "ex":
             print("Exit Password Locker")
             break
