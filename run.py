@@ -42,6 +42,35 @@ def display_users():
     '''
     return User.display_users()
 
+# Checks if user has logged in
+def log_in_user(user_name, user_password):
+    '''
+    Function that checks if the user has logged in
+    '''
+    login = User.login(user_name, user_password)
+    if login != False:
+        return User.login(user_name, user_password)
+    
+
+### CREDENTIAL INFORMATION
+def create_credential(account_name, account_password):
+    '''
+    Function that creates login credentials
+    '''
+    
+    new_credential = Credential(account_name, account_password)
+    return new_credential
+
+# save
+def save_credentials(credential):
+    '''
+    Functions that save the users credentials
+    '''
+    credential.save_credentials()
+    
+#def check_existing_credential_account(account_name)
+    
+
 def main():
     print("Welcome to password Locker. Create an account.")
     

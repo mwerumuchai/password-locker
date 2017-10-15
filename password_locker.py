@@ -145,7 +145,19 @@ class Credential:
       for credential in cls.credential_account_list:
           if credential.account_name == account_name:
               return credential
-        
+          
+    @classmethod
+    def check_existing_credential_account(cls, account_name):
+        '''
+        Functions that checks if the credential account exists and returns a boolean
+        '''
+        for credential in cls.credential_account_list:
+             if credential.account_name == account_name:
+                return True
+            
+        return False
+    
+                
     @classmethod
     def display_all_credential_accounts(cls):
         '''

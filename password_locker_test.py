@@ -198,6 +198,21 @@ class TestCredential(unittest.TestCase): # TestUser is a subclass
         
         self.assertEqual(found_credential.account_password,test_credential.account_password)
         
+      
+    # Check if credential account exists
+    def test_existing_credential_account(self):
+        '''
+        Test if the credential account exists
+        '''
+        self.new_credential.save_credential()
+        
+        test_credential = Credential("Instagram", "muchai90")
+        
+        test_credential.save_credential()
+        
+        check_existing_credential_account = Credential.check_existing_credential_account("Instagram")
+        
+        self.assertTrue(check_existing_credential_account)
         
     # Copy details in credentials account
     def test_copy_account_name(self):
