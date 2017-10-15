@@ -2,7 +2,7 @@
 #!/usr/bin/env python3.6
 
 from password_locker import User 
-#from password_locker import Credential
+from password_locker import Credential
 
 
 #Start with Users information
@@ -43,13 +43,14 @@ def display_users():
     return User.display_users()
 
 # Checks if user has logged in
-def log_in_user(user_name, user_password):
+def log_in_user(user_name,user_phone_number,user_email,user_password):
     '''
     Function that checks if the user has logged in
     '''
-    login = User.login(user_name, user_password)
+    login = User.login(user_name,user_phone_number,user_email,user_password)
+    
     if login != False:
-        return User.login(user_name, user_password)
+        return User.login(user_name,user_phone_number,user_email,user_password)
     
 
 ### CREDENTIAL INFORMATION
@@ -163,16 +164,24 @@ def main():
             user_name = input()
             
             print("Enter Password:")
+            user_phone_number = input()
+            
+            print("Enter User Name:")
+            user_email = input()
+            
+            print("Enter Password:")
             user_password = input()
             
-            if login(user_name, user_password):
-                print(f"{user_name} Proceed to your credentials \n Use the short codes below")
-                print('\n')
-                
-            else:
-                #user_login(user_name, user_password) == None:
+            if  log_in_user(user_name,user_phone_number,user_email,user_password) == None:
                 print("Forgot password or create new account")
                 print('\n')
+            
+                
+            else:
+                log_in_user(user_name,user_phone_number,user_email,user_password)
+                print(f"{user_name} Proceed to your credentials \n Use the short codes below")
+                print('\n')
+               
                 
                 while True:
                     '''
