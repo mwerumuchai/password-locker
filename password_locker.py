@@ -50,6 +50,19 @@ class User:
         
         return User.user_exists(user_name)
     
+    # Log in 
+    @classmethod
+    def login(cls,user_name,user_phone_number, user_email, user_password,):
+        '''
+        Method that allows a user with a password account to sign in
+        '''
+        
+        for user in cls.user_list:
+            if user.user_name == user_name and user.user_password == user_password:
+                return Credential.credential_account_list
+            
+        return False
+    
     #Display all users
     @classmethod
     def display_users(cls):

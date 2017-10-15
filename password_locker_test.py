@@ -81,6 +81,21 @@ class TestUser(unittest.TestCase): # TestUser is a subclass
         
         self.assertTrue(user_exists)
         
+    # Log into Credentials
+    def test_login(self):
+        '''
+        Test to check if user can log into their credentials
+        '''
+        self.new_user.save_user() #saving new user
+        
+        test_user = User("mwerumuchai", "0725336159","mwerumuchai@gmail.com", "mweru90")
+        test_user.save_user()
+        
+        # Connect with credential account
+        found_credential = User.login("mwerumuchai", "0725336159","mwerumuchai@gmail.com", "mweru90")
+        self.assertEqual(found_credential, Credential.credential_account_list )
+                      
+        
      # Display all users
     def test_display_users(self):
         
