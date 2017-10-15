@@ -55,11 +55,22 @@ def main():
             print("New Password Locker Account")
             print("-"*10)
               
-            print ("User name ....")
+            print ("User name: ....")
             user_name = input()
 
-            print("Password ....")
+            print("Phone Number: ....")
+            user_phone_number = input()
+            
+            print ("Email Address: ....")
+            user_email = input()
+
+            print("Password: ....")
             user_password = input()
+            
+            save_user(create_user(user_name,user_phone_number,user_email,user_password))
+            
+            print('\n')
+            print(f"{user_name} welcome! Continue to create you Credentials")
             
         elif short_code == "ex":
             print("Exit Password Locker")
