@@ -42,23 +42,23 @@ class User:
         User.user_list.append(self)
     
     
-    def check_existing_user_account(user_password):
+    def check_existing_user_account(user_name):
         
         '''
         Functions that checks if the user account exists and returns a boolean
         '''
         
-        return User.user_exists(user_password)
+        return User.user_exists(user_name)
     
     @classmethod
-    def user_exists(cls, user_password):
+    def user_exists(cls, user_name):
         
         '''
-        Method that is used to check if the account exists. User password.
+        Method that is used to check if the account exists. User name.
         '''
         # will lopp through each account that is saved and it will check if the password matches. 
         for user in cls.user_list:
-            if user.user_password == user_password:
+            if user.user_name == user_name:
                 #return Credential.credential_account_list
                 return True
             

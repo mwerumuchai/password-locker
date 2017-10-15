@@ -77,7 +77,7 @@ class TestUser(unittest.TestCase): # TestUser is a subclass
         test_user =  User("marymukami", "0714253689", "marymukami@gmail.com", "mary90")
         test_user.save_user()
         
-        user_exists = User.user_exists("mary90")
+        user_exists = User.user_exists("marymukami")
         
         self.assertTrue(user_exists)
         
