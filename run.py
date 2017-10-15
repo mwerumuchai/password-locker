@@ -35,13 +35,38 @@ def check_existing_user(user_name):
     return User.user_exists(user_name)
 
 def main():
-    print("Welcome to password Locker. Kindly write your user name below")
+    print("Welcome to password Locker. Create an account.")
     
-    user_name = input()
-    
-    print(f"{user_name}, Would you like to create a credential account?")
-    print('\n')
-    
+# =============================================================================
+#     user_name = input()
+#     
+#     print(f"{user_name}, Would you like to create a credential account?")
+#     print('\n')
+# =============================================================================
+    while True:
+        print("Use these short codes :\n cu - Create a new user account \n du - Display user information \n ex - Exit Password Locker")
+              
+        short_code = input().lower()
+          
+        if short_code == 'cu':
+            '''
+            Create a new password locker account
+            '''
+            print("New Password Locker Account")
+            print("-"*10)
+              
+            print ("User name ....")
+            user_name = input()
+
+            print("Password ....")
+            user_password = input()
+            
+        elif short_code == "ex":
+            print("Exit Password Locker")
+            break
+        else:
+            print("Please use the short codes to continue. Thank you.")
+              
 
 if __name__ == '__main__':
     main()
