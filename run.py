@@ -181,6 +181,10 @@ def main():
                 log_in_user(user_name,user_phone_number,user_email,user_password)
                 print(f"{user_name} Proceed to your credentials \n Use the short codes below")
                 print('\n')
+                
+                print("Use these short codes :\n cc - Create a new credential account \n cg - Autogenerate password \n ex - Exit Password Locker")
+                print('\n')
+                
 
 
                 while True:
@@ -231,10 +235,12 @@ def main():
                         print(f"About to exit")
                         print('\n')
                         break
-                    else:
-                        print("Try again")
-                        print('\n')
-                        break
+# =============================================================================
+#                     else:
+#                         print("Try again")
+#                         print('\n')
+#                         break
+# =============================================================================
 
 
 
