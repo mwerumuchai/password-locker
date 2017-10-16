@@ -163,10 +163,10 @@ def main():
             print("Enter User Name:")
             user_name = input()
 
-            print("Enter Password:")
+            print("Enter Phone number:")
             user_phone_number = input()
 
-            print("Enter User Name:")
+            print("Enter Email :")
             user_email = input()
 
             print("Enter Password:")
