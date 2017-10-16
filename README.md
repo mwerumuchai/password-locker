@@ -10,10 +10,10 @@ This is a simple application that allows users to generate  and store passwords 
 ## Specifications
 | Behaviour | Input | Output |
 | --------------- | :----------:| --------: |
-|Display a page for creating a user account | **Select New user account** | User Name, Phone number, email, password |
-|Display a page for sign up if already created a user account| **Select sign up** | User name and password|
-|Display a page for creating a credential account | **Select New credential account** | Account Name, password |
-|Display a page for sign up if already created a credential account| **Select sign up** | Password|
+|Create a user account | **Select New user account** | User Name, Phone number, email, password |
+|Sign up if already created a user account| **Select sign up** | User name and password|
+|CreatE a credential account | **Select New credential account** | Account Name, password |
+|Sign up if already created a credential account| **Select sign up** | Password|
 |Add New credential account| **Select New Credential** | Account Name. password|
 
 ## User Stories
