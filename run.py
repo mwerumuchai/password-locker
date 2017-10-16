@@ -187,7 +187,6 @@ def main():
                     '''
                     Loop through functions
                     '''
-                    print("Use these short codes :\n cc - Create a New Credential account \n cg - Autogenerate password \n dc - Display credential information  \n lg - Log in \n ex - Log out")
                     
                     if short_code == 'cc':
                         '''
