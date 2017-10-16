@@ -234,6 +234,7 @@ def main():
                     else:
                         print("Try again")
                         print('\n')
+                        break
 
 
 
