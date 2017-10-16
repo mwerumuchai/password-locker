@@ -43,14 +43,16 @@ def display_users():
     return User.display_users()
 
 # Checks if user has logged in
-def log_in_user(user_name,user_phone_number,user_email,user_password):
+def log_in_user(user_name,user_password):
     '''
     Function that checks if the user has logged in
     '''
-    login = User.login(user_name,user_phone_number,user_email,user_password)
+    login = Credential.check_existing_credential_account(user_name,user_password)
 
-    if login != False:
-        return User.login(user_name,user_phone_number,user_email,user_password)
+    return login
+
+    #if login != False:
+        #return User.login(user_name,user_password)
 
 
 ### CREDENTIAL INFORMATION
@@ -67,7 +69,7 @@ def save_credentials(credential):
     '''
     Functions that save the users credentials
     '''
-    credential.save_credentials()
+    credential.save_credential()
 
 # check existing credential account
 def check_existing_credential_account(account_name):
@@ -77,11 +79,11 @@ def check_existing_credential_account(account_name):
     return Credential.check_existing_credential_account(account_name)
 
 # Dispalay all the accounts the user has
-def display_all_credentials(account_password):
+def display_all_credentials():
     '''
     Function that finds all the credentials saved
     '''
-    return Credential.display_all_credentials(account_password)
+    return Credential.display_all_credential_accounts()
 
 #autogenerate password
 def create_autogenerate_password(account_name):
@@ -163,34 +165,27 @@ def main():
             print("Enter User Name:")
             user_name = input()
 
-            print("Enter Phone number:")
-            user_phone_number = input()
-
-            print("Enter Email :")
-            user_email = input()
+            # print("Enter Phone number:")
+            # user_phone_number = input()
+            #
+            # print("Enter Email :")
+            # user_email = input()
 
             print("Enter Password:")
             user_password = input()
 
-            if  log_in_user(user_name,user_phone_number,user_email,user_password) == None:
-                print("Forgot password or create new account")
-                print('\n')
+            sign_in = log_in_user(user_name,user_password)
 
-
-            else:
-                log_in_user(user_name,user_phone_number,user_email,user_password)
+            if  sign_in == True:
                 print(f"{user_name} Proceed to your credentials \n Use the short codes below")
                 print('\n')
-                
-                print("Use these short codes :\n cc - Create a new credential account \n cg - Autogenerate password \n ex - Exit Password Locker")
-                print('\n')
-                
-
-
                 while True:
                     '''
                     Loop through functions
                     '''
+                    print("Use these short codes :\n cc - Create a new credential account \n d - Display All credential \n ap - Autogenerate password \n ex - Exit Password Locker")
+                    print('\n')
+                    short_code = input().lower()
 
                     if short_code == 'cc':
                         '''
@@ -212,7 +207,22 @@ def main():
                         print(f"{account_name}, you have created a new account")
                         print('\n')
 
-                    elif short_code == 'cg':
+                    elif short_code == 'd':
+                        '''
+                        Display credentials
+                        '''
+                        if display_all_credentials():
+                            print("List of all your accounts")
+                            print('\n')
+
+                            for display in display_all_credentials():
+                                print(f"{display.account_name}, {display.account_password}")
+                        else:
+                            print("You don't have any accounts yet.")
+
+
+
+                    elif short_code == 'ap':
                         '''
                         Autogenerate passowrd
                         '''
@@ -235,14 +245,10 @@ def main():
                         print(f"About to exit")
                         print('\n')
                         break
-# =============================================================================
-#                     else:
-#                         print("Try again")
-#                         print('\n')
-#                         break
-# =============================================================================
-
-
+                    else:
+                        print("Try again")
+                        print('\n')
+                        break
 
 
 
