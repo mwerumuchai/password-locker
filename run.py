@@ -1,4 +1,4 @@
-
+#!/usr/bin/env python
 #!/usr/bin/env python3.6
 
 from password_locker import User
@@ -97,14 +97,8 @@ def create_autogenerate_password(account_name):
 
 
 def main():
-    print("Welcome to password Locker. Create an account.")
+    print("Welcome to password Locker.")
 
-# =============================================================================
-#     user_name = input()
-#
-#     print(f"{user_name}, Would you like to create a credential account?")
-#     print('\n')
-# =============================================================================
     while True:
         print("Use these short codes :\n cu - Create a new user account \n du - Display user information  \n lg - Log in \n ex - Exit Password Locker")
 
@@ -114,6 +108,7 @@ def main():
             '''
             Create a new password locker account
             '''
+            print("\n")
             print("New Password Locker Account")
             print("-"*10)
 
@@ -132,8 +127,9 @@ def main():
             #Create and save new user
             save_user(create_user(user_name,user_phone_number,user_email,user_password))
 
-            print('\n')
-            print(f"{user_name} welcome! Continue to create you Credentials")
+            print("\n")
+            print(f"{user_name} welcome to Password Locker!")
+            print("\n")
 
         elif short_code == 'du' :
             '''
@@ -141,25 +137,24 @@ def main():
             '''
 
             if display_users():
+                print("\n")
                 print("Current Users")
                 print("-"*10)
 
                 for user in display_users():
                     print(f"{user.user_name}")
-
-                    print('\n')
                     print("-"*10)
             else:
-                print('\n')
+                print("\n")
                 print("You don't have an account. Please register to use Password Locker.")
-
-                print('\n')
+                print("\n")
 
         elif short_code == 'lg' :
             '''
             Logs the user in to view or create their accounts
             '''
-            print("Please sign in")
+            print("\n")
+            print("Proceed to sign in to your account.")
             print('\n')
 
             print("Enter User Name:")
@@ -177,13 +172,13 @@ def main():
             sign_in = log_in_user(user_name,user_password)
 
             if  sign_in == True:
-                print(f"{user_name} Proceed to your credentials \n Use the short codes below")
+                print(f"{user_name} Proceed to your credentials")
                 print('\n')
                 while True:
                     '''
                     Loop through functions
                     '''
-                    print("Use these short codes :\n cc - Create a new credential account \n d - Display All credential \n ap - Autogenerate password \n ex - Exit Password Locker")
+                    print("Use these short codes :\n cc - Create a new credential account \n d - Display All credential \n ap - Autogenerate password \n ex - Exit Account")
                     print('\n')
                     short_code = input().lower()
 
@@ -191,9 +186,8 @@ def main():
                         '''
                         Create credential account
                         '''
-
+                        print("\n")
                         print("New Account")
-                        print('\n')
                         print("-"*10)
 
                         print(" Account Name: ....")
@@ -204,8 +198,9 @@ def main():
 
                         save_credentials(create_credential(account_name, account_password))
 
+                        print("\n")
                         print(f"{account_name}, you have created a new account")
-                        print('\n')
+                        print("\n")
 
                     elif short_code == 'd':
                         '''
@@ -216,9 +211,13 @@ def main():
                             print('\n')
 
                             for display in display_all_credentials():
-                                print(f"{display.account_name}, {display.account_password}")
+                                print(f"Account:..... {display.account_name}")
+                                print(f"Password:..... {display.account_password}")
+                                print("-"*10)
                         else:
+                            print("\n")
                             print("You don't have any accounts yet.")
+                            print("\n")
 
 
 
@@ -226,9 +225,8 @@ def main():
                         '''
                         Autogenerate passowrd
                         '''
-
+                        print("\n")
                         print("New Account")
-                        print('\n')
                         print("-"*10)
 
                         print(" Account Name: ....")
@@ -237,12 +235,14 @@ def main():
                         #save new account/autogenrate password
                         save_credentials(Credential(account_name, (create_autogenerate_password(account_name))))
 
+                        print("\n")
                         print(f"{account_name}, you have created a new account")
-                        print('\n')
+                        print("\n")
 
                     ##exit credential
                     elif short_code == 'ex' :
-                        print(f"About to exit")
+                        print("\n")
+                        print(f"About to exit your account ")
                         print('\n')
                         break
                     else:
